@@ -5,7 +5,7 @@ const DynamicComponent = dynamic(() => import('../components/CartScreen'), {
 	ssr: false,
 });
 
-const cart = () => {
+const Cart = () => {
 	return (
 		<div className="pt-16">
 			<DynamicComponent />
@@ -13,4 +13,4 @@ const cart = () => {
 	);
 };
 
-export default cart;
+export default Cart;

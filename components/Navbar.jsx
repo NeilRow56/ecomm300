@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
@@ -50,6 +51,8 @@ function Navbar() {
 			);
 		}
 	};
+
+	const { cartTotalQuantity } = useSelector((state) => state.cart);
 	return (
 		<div className="flex  w-full justify-between items-center h-18 px-4 fixed z-10 bg-gray-700 text-white dark:bg-gray-900  ">
 			<div className="flex w-full justify-between max-w-[1300px] mx-auto">

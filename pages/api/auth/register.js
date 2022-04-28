@@ -1,17 +1,12 @@
 import nc from 'next-connect';
-import {
-	allProducts,
-	newProduct,
-} from '../../../controllers/productControllers';
-
 import dbConnect from '../../../lib/dbConnect';
+
+import { registerUser } from '../../../controllers/authControllers';
 
 const handler = nc();
 
 dbConnect();
 
-handler.get(allProducts);
-
-handler.post(newProduct);
+handler.post(registerUser);
 
 export default handler;

@@ -10,8 +10,10 @@ import {
 	getTotals,
 } from '../features/cartSlice';
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
+import { useRouter } from 'next/router';
 
 const CartScreen = () => {
+	const router = useRouter();
 	const cart = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
 
@@ -30,6 +32,9 @@ const CartScreen = () => {
 	};
 	const handleClearCart = () => {
 		dispatch(clearCart());
+	};
+	const checkoutHandler = () => {
+		router.push('/shipping');
 	};
 
 	return (
@@ -165,7 +170,10 @@ const CartScreen = () => {
 								</p>
 							</div>
 							<div className=" mx-auto">
-								<button className="rounded-md w-[130px] my-2 bg-blue-600 text-white py-1">
+								<button
+									onClick={checkoutHandler}
+									className="rounded-md w-[130px] my-2 bg-blue-600 text-white py-1"
+								>
 									Check out
 								</button>
 							</div>
