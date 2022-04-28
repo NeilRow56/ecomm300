@@ -6,8 +6,9 @@ import {
 } from '../../../controllers/productControllers';
 
 import dbConnect from '../../../lib/dbConnect';
+import onError from '../../../middlewares/errors';
 
-const handler = nc();
+const handler = nc({ onError });
 
 dbConnect();
 
